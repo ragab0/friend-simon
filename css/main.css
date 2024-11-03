@@ -1,0 +1,650 @@
+.home-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--clr-white-light);
+    position: relative;
+
+    background-color: #111111c9;
+    background-image: url("../imgs/intro-bg.jpg");
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-position: 50%;
+    background-size: cover;
+}
+
+.home-page nav {
+    --nav-main-p: 0.75rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: var(--shadow-layer);
+    background-color: inherit;
+    color: var(--clr-white-light);
+    z-index: 100;
+}
+
+.home-page nav .container {
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.home-page .logo {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding-block: 1rem;
+}
+
+.home-page .logo i {
+    color: inherit;
+    padding: 0;
+}
+
+.home-page .menu-btn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    align-self: stretch;
+    cursor: pointer;
+    transition: var(--transition-main);
+    font-size: 1.5rem;
+}
+
+.home-page .menu-btn i:hover {
+    color: unset;
+}
+
+.home-page .menu-btn:hover {
+    color: var(--clr-main);
+}
+
+.home-page .menu-btn .menu-btn__closed {
+    display: none;
+}
+
+.home-page .menu-btn:hover .menu-btn__closed {
+    display: block;
+}
+.home-page .menu-btn:hover .menu-btn__open {
+    display: none;
+}
+
+.home-page .menu-container {
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    position: absolute;
+    left: 0rem;
+    top: 100%;
+}
+
+.home-page .links {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+    gap: 0 0.75rem;
+}
+
+.home-page .menu-btn:hover + .menu-container,
+.home-page .menu-container:hover {
+    display: flex;
+}
+
+.home-page .links a {
+    display: block;
+    padding: 1rem 0.5rem;
+    color: var(--clr-secondry);
+    text-transform: capitalize;
+    border-radius: 4px;
+    color: var(--clr-white-light);
+}
+
+.home-page .links a:hover,
+.home-page .links a.active {
+    color: var(--clr-main);
+}
+
+.home-page .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page .content {
+    padding-block: 5rem 3rem;
+}
+
+.home-page .content > * {
+    margin-block: 1rem;
+}
+
+.home-page .content p:first-of-type {
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.home-page .content p:last-of-type {
+    font-size: 21px;
+}
+
+.home-page .scroller {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 2rem;
+}
+
+.home-page .scroller i {
+    font-size: 1.5rem;
+    animation: upside-down 1.5s infinite;
+    -webkit-animation: upside-down 1.5s infinite;
+    -moz-animation: upside-down 1.5s infinite;
+}
+
+/* Starting about-page props */
+
+.about-page h2::before {
+    content: "about me";
+}
+
+.about-page .left-side > * {
+    margin-block-end: 1rem;
+}
+
+.about-page .right-side li {
+    padding-block: 0.75rem;
+}
+
+.about-page .right-side li:not(:last-of-type) {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.about-page .right-side li span {
+    font-weight: 600;
+    margin-inline-end: 0.5rem;
+}
+
+.about-page .right-side button {
+    margin-top: 1rem;
+}
+
+.about-page .down-side {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.about-page .down-side li {
+    border: 1px dotted #e0dede;
+    border-top: none;
+    padding-block: 1.5rem;
+    border-collapse: collapse;
+}
+
+/* Starting what-page props */
+.what-page h2::before {
+    content: "services";
+}
+
+.what-page figure {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.what-page figure > div {
+    align-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.what-page figure i {
+    font-size: 30px;
+    padding: 20px;
+    color: var(--clr-main);
+    cursor: unset;
+}
+
+.what-page fieldset {
+    border: none;
+}
+
+.what-page fieldset h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    color: #252b33;
+}
+
+.what-page fieldset > * {
+    margin-block-end: 1rem;
+}
+
+/* Starting resume-page props */
+.resume-page h2::before {
+    content: "summary";
+}
+
+.resume-page h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.resume-page h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-page .normal-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.resume-page .normal-card time {
+    background-color: var(--clr-main);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.resume-page .normal-card h4 + p {
+    color: rgb(220, 53, 69);
+    margin-bottom: 1rem;
+}
+
+.resume-page .down-side {
+    margin-top: 1.5rem;
+}
+
+.resume-page .prog-cards {
+    row-gap: 1.5rem;
+}
+
+.resume-page .prog-card .skill {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+}
+
+.resume-page .prog-card .prog {
+    height: 0.5rem;
+    border-radius: 1rem;
+    background-color: #e9ecef;
+    position: relative;
+}
+
+.resume-page .prog-card .prog::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--clr-main);
+    height: 100%;
+    width: var(--prog);
+}
+
+.resume-page .btn-side {
+    text-align: center;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+/* Starting the portfolioPage */
+.portfolio-page h2::before {
+    content: "portfolio";
+}
+
+.portfolio-page .btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.portfolio-page .btns button {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    color: #7b8084;
+    font-size: 1rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: var(--transition-main);
+}
+
+.portfolio-page .btns button:hover {
+    color: var(--clr-main);
+}
+
+.portfolio-page .btns button:active,
+.portfolio-page .btns button.active {
+    color: var(--clr-main);
+    border-color: currentColor;
+}
+
+.portfolio-page .project {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    background-color: red;
+    border-radius: 0.25rem;
+    display: flex;
+    /* make the project element take the all height .. as there was an extra height !! */
+}
+
+.portfolio-page .project img {
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-page .project:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-page .project .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-transform: capitalize;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-page .project:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-page .project .overlay span:last-of-type {
+    opacity: 0.8;
+}
+
+.portfolio-page {
+}
+
+/* Starting the clientPage */
+.client-page h2::before {
+    content: "testimonial";
+}
+
+.client-page .content {
+    position: relative;
+}
+
+.client-page .slides-tran {
+    position: absolute;
+    top: calc(100% + 10px);
+    /* +10px to leave a space for the outline .. MAY BE to not affected with z-index of its prev element  */
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 20px;
+    height: 20px;
+    color: rgba(0, 0, 0, 0.2);
+    background-color: currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.client-page .slides-tran:hover,
+.client-page .slides-tran.active {
+    color: var(--clr-main);
+    border: 5px solid white;
+    outline: 1px solid currentColor;
+}
+
+.client-page .slides-tran:first-of-type {
+    transform: translateX(calc(-50% - 5px));
+}
+.client-page .slides-tran:last-of-type {
+    transform: translateX(calc(50% + 5px));
+}
+
+.client-page .slides {
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.client-page .client {
+    padding: 3rem;
+    background-color: var(--clr-white-light);
+    transition: var(--transition-smooth);
+}
+
+.client-page .slides-tran:last-of-type:hover + .slides .client {
+    transform: translateX(-200%);
+    /* 
+     * ONLY CSS xDDDDD 
+     *
+     */
+}
+
+.client-page .client__profile {
+    display: flex;
+    gap: 1rem;
+}
+
+.client-page .client__profile img {
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+}
+
+.client-page .client__profile p:first-of-type {
+    font-weight: 600;
+}
+
+.client-page .client__profile p:last-of-type {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.client-page .client__quote {
+    color: rgb(33 37 41);
+    font-weight: 500;
+    margin-block: 1.5rem;
+}
+
+.client-page .client__stars i {
+    padding: 0;
+    color: rgb(255, 193, 7);
+}
+
+.client-page .client__stars i:hover {
+    color: unset;
+    cursor: unset;
+    opacity: unset;
+}
+
+/* Starting the contactPage */
+.contact-page h2::before {
+    content: "contact";
+}
+
+.contact-page h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.contact-page .left-side__up ul {
+    margin-block: 1.5rem;
+}
+
+.contact-page .left-side__up i {
+    padding-inline-start: 0;
+    color: var(--clr-main);
+}
+
+.contact-page .left-side__down h3 {
+    margin-bottom: 0;
+}
+
+.contact-page .left-side__down ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-page .left-side__down i {
+    padding: 1rem 0;
+}
+
+.contact-page form > * {
+    margin-bottom: 1.5rem;
+}
+
+.contact-page form input,
+.contact-page form textarea {
+    width: 100%;
+    border: 1px solid #dae1e3;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    text-transform: capitalize;
+}
+
+.contact-page .btn-container {
+    text-align: center;
+}
+
+.contact-page {
+}
+.contact-page {
+}
+.contact-page {
+}
+
+footer {
+    color: #252b33;
+    padding: 4.125rem 0;
+}
+
+footer a:not(:last-of-type) {
+    border-right: 1px solid currentColor;
+    padding-right: 0.5rem;
+    margin-right: 0.25rem;
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer b {
+    font-style: italic;
+    color: var(--clr-main);
+}
+
+/* Starting animations */
+@keyframes upside-down {
+    0% {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+/* For mobile only */
+@media (max-width: 991px) {
+    .home-page .menu-container {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+    .home-page .menu-container .links,
+    .home-page .menu-container .icons {
+        background-color: white;
+        border-radius: 0.25rem;
+    }
+    .home-page .menu-container .links {
+        text-align: left;
+        background-color: transparent;
+        /* overflow-y: scroll; */
+    }
+
+    .home-page .menu-container .links a {
+        border-bottom: 1px solid;
+        border-radius: 0;
+    }
+
+    .home-page .menu-container .icons {
+        box-shadow: var(--shadow-layer);
+        display: none;
+    }
+    .home-page .menu-container:active {
+        display: none;
+    }
+
+    /* the about-page mobile porps */
+
+    .about-page .left-side {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .home-page nav > .container {
+        flex-flow: row nowrap;
+    }
+    .home-page .menu-btn {
+        display: none;
+    }
+    .home-page .menu-container {
+        display: flex;
+        flex-direction: row;
+        position: unset;
+        padding-top: unset;
+    }
+    .home-page .links {
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .home-page .content img {
+        display: block;
+    }
+
+    /* About-page */
+
+    .about-page .content .skills > div {
+        width: fit-content;
+    }
+
+    /** Footer comp */
+    footer > div > .container {
+        flex-direction: row;
+    }
+}
